@@ -1,9 +1,18 @@
-function RestaurantsContainer() {
-  return (
-    <div className="restaurantContainer">
+import Restaurant from "./Restaurant.jsx";
+import { restaurants } from '../data/data.js'
 
-    </div>
-  );
-}
+function RestaurantContainer() {
+    return (
+      
+      <div className="restaurantContainer">
+        {restaurants.map((restaurant) => (
+            //passing it as a prop
+          <Restaurant restaurant={restaurant} key={restaurant.id} />
+        ))}
+      </div>
+    );
+  }
+  
+export default RestaurantContainer
 
-export default RestaurantsContainer;
+
